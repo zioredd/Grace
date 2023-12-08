@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const history = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -16,12 +18,9 @@ const Navbar = () => {
         </div>
         <div className="hidden sm:flex">
           <ul className="flex space-x-4">
+            <NavbarItem label="ABOUT" dropdownItems={["Who we are", "Staff"]} />
             <NavbarItem
-              label="WHO WE ARE"
-              dropdownItems={["Who we are", "Staff"]}
-            />
-            <NavbarItem
-              label="EVENTS"
+              label="SERVICES"
               dropdownItems={[
                 "Prayer",
                 "Counselling",
@@ -30,9 +29,36 @@ const Navbar = () => {
               ]}
             />
 
-            <li className="px-4 py-2 font-semibold">LOCATION</li>
-            <li className="px-4 py-2 font-semibold">GIVE</li>
-            <li className="px-4 py-2 font-semibold">LOGIN</li>
+            <li
+              onClick={() => history("/OurMission")}
+              className="px-4 py-2 font-semibold"
+            >
+              GIVE
+            </li>
+            <li
+              onClick={() => history("/staff")}
+              className="px-4 py-2 font-semibold"
+            >
+              MEDIA
+            </li>
+            <li
+              onClick={() => history("/contact")}
+              className="px-4 py-2 font-semibold"
+            >
+              MEMBERSHIP
+            </li>
+            <li
+              onClick={() => history("/resources")}
+              className="px-4 py-2 font-semibold"
+            >
+              RESOURCES
+            </li>
+            <li
+              onClick={() => history("/contact")}
+              className="px-4 py-2 font-semibold"
+            >
+              CONTACT
+            </li>
           </ul>
         </div>
         <div className="mr-2 flex sm:hidden">
@@ -88,19 +114,40 @@ const Navbar = () => {
       >
         <ul className="list-none flex justify-end items-start flex-1 flex-col space-y-5">
           <li className={`font-poppins font-medium cursor-pointer text-[16px]`}>
-            WHO WE ARE
+            About
+          </li>
+          <li
+            onClick={() => history("/services")}
+            className={`font-poppins font-medium cursor-pointer text-[16px]`}
+          >
+            Services
+          </li>
+          <li
+            onClick={() => history("/OurMission")}
+            className={`font-poppins font-medium cursor-pointer text-[16px]`}
+          >
+            Give
+          </li>
+          <li
+            onClick={() => history("/staff")}
+            className={`font-poppins font-medium cursor-pointer text-[16px]`}
+          >
+            Media
           </li>
           <li className={`font-poppins font-medium cursor-pointer text-[16px]`}>
-            EVENTS
+            Membership
           </li>
-          <li className={`font-poppins font-medium cursor-pointer text-[16px]`}>
-            LOCATIONS
+          <li
+            onClick={() => history("/resources")}
+            className={`font-poppins font-medium cursor-pointer text-[16px]`}
+          >
+            Resources
           </li>
-          <li className={`font-poppins font-medium cursor-pointer text-[16px]`}>
-            GIVE
-          </li>
-          <li className={`font-poppins font-medium cursor-pointer text-[16px]`}>
-            lOGIN
+          <li
+            onClick={() => history("/contact")}
+            className={`font-poppins font-medium cursor-pointer text-[16px]`}
+          >
+            Contact
           </li>
         </ul>
       </div>
@@ -131,7 +178,11 @@ const NavbarItem = ({ label, dropdownItems }) => {
           <ul className="space-y-2 p-2">
             {dropdownItems.map((item) => (
               <li key={item}>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-200">
+                <a
+                  href="#"
+                  className="block px-4 py-2 hover:bg-gray-200"
+                  onClick={() => history("/services")}
+                >
                   {item}
                 </a>
               </li>
