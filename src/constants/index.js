@@ -71,3 +71,46 @@ export const infos = [
     text: "lorem ipsum dolor",
   },
 ];
+
+export const data = [
+  {
+    title: "Lejoch",
+    details: "Children",
+    text: "lorem ipsum dolor",
+  },
+  {
+    title: "Lejoch",
+    details: "Children",
+    text: "lorem ipsum dolor",
+  },
+  {
+    title: "Lejoch",
+    details: "Children",
+    text: "lorem ipsum dolor",
+  },
+  {
+    title: "Lejoch",
+    details: "Children",
+    text: "lorem ipsum dolor",
+  },
+  {
+    title: "Lejoch",
+    details: "Children",
+    text: "lorem ipsum dolor",
+  },
+  {
+    title: "Lejoch",
+    details: "Children",
+    text: "lorem ipsum dolor",
+  },
+  {
+    title: "Lejoch",
+    details: "Children",
+    text: "lorem ipsum dolor",
+  },
+  {
+    title: "Lejoch",
+    details: "Children",
+    text: "lorem ipsum dolor",
+  },
+];

@@ -16,3 +16,12 @@
     }
   }
 }
+
+body,
+#root {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  overflow-y: auto;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}

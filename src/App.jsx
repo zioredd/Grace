@@ -3,10 +3,11 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import ContactScreen from "./screens/ContactScreen";
-import OurMission from "./components/OurMission";
-import Staff from "./components/Staff";
-import Resources from "./components/Resources";
-import Services from "./components/Services";
+import OurMission from "./screens/OurMission";
+import Staff from "./screens/Staff";
+import Resources from "./screens/Resources";
+import Services from "./screens/Services";
+import AboutScreen from "./screens/AboutScreen";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,8 +17,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={"/"} element={<HomeScreen />} />
+          <Route path={"/about"} element={<AboutScreen />} />
           <Route path={"/contact"} element={<ContactScreen />} />
-          <Route path="/OurMission" element={<OurMission />} />
+          <Route path="/ourmission" element={<OurMission />} />
           <Route path="/staff" element={<Staff />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/services" element={<Services />} />

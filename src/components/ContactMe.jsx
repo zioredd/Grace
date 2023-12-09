@@ -142,7 +142,7 @@ function ContactMe() {
             >
               <label htmlFor="name">
                 <div
-                  className="text-xl sm:text-2xl sm:font-bold mb-5"
+                  className="text-[1.25rem] sm:text-[1.5rem] sm:text-[1.5rem] sm:font-semibold mb-5"
                   style={{ color: "#fff" }}
                 >
                   hey, my name is
@@ -173,7 +173,7 @@ function ContactMe() {
               ></div>
               <label htmlFor="email">
                 <div
-                  className="text-2xl sm:font-bold mb-5"
+                  className="text-[1.25rem] sm:text-[1.5rem] sm:text-[1.5rem] sm:font-semibold mb-5"
                   style={{ color: "#fff" }}
                 >
                   my email address is
@@ -204,7 +204,7 @@ function ContactMe() {
               ></div>
               <label htmlFor="service">
                 <div
-                  className="text-2xl sm:font-bold mb-5"
+                  className="text-[1.25rem] sm:text-[1.5rem] sm:text-[1.5rem] sm:font-semibold mb-5"
                   style={{ color: "#fff" }}
                 >
                   i'm looking for help with
@@ -236,7 +236,9 @@ function ContactMe() {
                 }}
               ></div>
               <label htmlFor="message" style={{ color: "#fff" }}>
-                <div className="text-2xl sm:font-bold mb-5">my message</div>
+                <div className="text-[1.25rem] sm:text-[1.5rem] sm:text-[1.5rem] sm:font-semibold mb-5">
+                  my message
+                </div>
               </label>
               <textarea
                 className="w-[50rem] h-32 resize bg-[#1c1b20] pl-2 outline-none"

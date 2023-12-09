@@ -84,19 +84,21 @@ const Questions = () => {
     >
       <div className="bg-black bg-opacity-50 absolute inset-0"></div>
       <div className="container mx-auto py-10 md:py-20 px-4 sm:px-6 lg:px-8 text-white relative z-10">
-        <h2 className="font-[poppins] text-4xl md:text-5xl lg:text-6xl font-bold whitespace-no-wrap">
+        <h2 className="font-[poppins] font-bold text-[25px] xs:text-[30px] sm:text-[40px] font-[700] whitespace-no-wrap">
           How much is
         </h2>
-        <h2 className="font-[poppins] text-4xl md:text-5xl lg:text-6xl font-bold whitespace-no-wrap">
+        <h2 className="font-[poppins] font-bold text-[25px] xs:text-[30px] sm:text-[40px] font-[700] whitespace-no-wrap">
           a child worth?
         </h2>
-        <p className="font-[raleway] text-base md:text-lg lg:text-xl my-8 max-w-full ss:max-w-[50%]">
+        <p className="font-[raleway] text-[16px] ss:text-[18px] sm:text-[19px] my-8 max-w-full ss:max-w-[50%]">
           How we value children and other vulnerable members of our community
           says a lot about our faith. Learn how prevalent abuse within the
           church is and what you can do to respond to this urgent crisis.
         </p>
         <div className="mt-4 sm:mt-6">
-          <button className={`${styles.btn__header} bg-[#f8c933] text-[#000]`}>
+          <button
+            className={`${styles.btn__header} font-[raleway] text-[16px] ss:text-[18px] sm:text-[19px] bg-[#f8c933] text-[#000]`}
+          >
             Common Questions
           </button>
         </div>

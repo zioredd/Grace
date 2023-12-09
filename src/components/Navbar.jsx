@@ -10,15 +10,19 @@ const Navbar = () => {
   };
   return (
     <nav className="fixed top-0 inset-x-0 bg-[#000] bg-opacity-50 text-white w-full">
-      <div className="container mx-auto flex items-center justify-between sm:py-4 sm:px-[3rem]">
-        <div>
-          <h1 className="font-[raleway] text-lg font-bold lgg:text-[22px]">
-            Logo
-          </h1>
+      <div className=" flex items-center justify-between py-4 px-[2.5rem]">
+        <div className="font-[raleway] text-lg font-bold lgg:text-[22px]">
+          <button onClick={() => history("/")}>
+            <h1>Logo</h1>
+          </button>
         </div>
         <div className="hidden sm:flex">
-          <ul className="flex space-x-4">
-            <NavbarItem label="ABOUT" dropdownItems={["Who we are", "Staff"]} />
+          <ul className="flex space-x-[1rem] py-[0.85rem] text-[13px] smd:space-x-[2rem] md:space-x-[2.5rem] lg:text-[17px]">
+            <NavbarItem
+              label="ABOUT"
+              dropdownItems={["Who we are", "Staff"]}
+              route="/about"
+            />
             <NavbarItem
               label="SERVICES"
               dropdownItems={[
@@ -27,35 +31,36 @@ const Navbar = () => {
                 "Counselling",
                 "Counselling",
               ]}
+              route="/services"
             />
 
             <li
-              onClick={() => history("/OurMission")}
-              className="px-4 py-2 font-semibold"
+              onClick={() => history("/ourmission")}
+              className="font-[500] cursor-pointer lgg:text-[22px]"
             >
               GIVE
             </li>
             <li
               onClick={() => history("/staff")}
-              className="px-4 py-2 font-semibold"
+              className="font-[500] cursor-pointer lgg:text-[22px]"
             >
               MEDIA
             </li>
             <li
               onClick={() => history("/contact")}
-              className="px-4 py-2 font-semibold"
+              className="font-[500] cursor-pointer lgg:text-[22px]"
             >
               MEMBERSHIP
             </li>
             <li
               onClick={() => history("/resources")}
-              className="px-4 py-2 font-semibold"
+              className="font-[500] cursor-pointer lgg:text-[22px]"
             >
               RESOURCES
             </li>
             <li
               onClick={() => history("/contact")}
-              className="px-4 py-2 font-semibold"
+              className="font-[500] cursor-pointer lgg:text-[22px]"
             >
               CONTACT
             </li>
@@ -110,10 +115,13 @@ const Navbar = () => {
       <div
         className={`${
           !isMenuOpen ? "hidden" : "flex"
-        } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar bg-[#242426]`}
+        } p-6 bg-black-gradient absolute top-10 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar bg-[#242426]`}
       >
         <ul className="list-none flex justify-end items-start flex-1 flex-col space-y-5">
-          <li className={`font-poppins font-medium cursor-pointer text-[16px]`}>
+          <li
+            onClick={() => history("/about")}
+            className={`font-poppins font-medium cursor-pointer text-[16px]`}
+          >
             About
           </li>
           <li
@@ -123,7 +131,7 @@ const Navbar = () => {
             Services
           </li>
           <li
-            onClick={() => history("/OurMission")}
+            onClick={() => history("/ourmission")}
             className={`font-poppins font-medium cursor-pointer text-[16px]`}
           >
             Give
@@ -134,7 +142,10 @@ const Navbar = () => {
           >
             Media
           </li>
-          <li className={`font-poppins font-medium cursor-pointer text-[16px]`}>
+          <li
+            onClick={() => history("/contact")}
+            className={`font-poppins font-medium cursor-pointer text-[16px]`}
+          >
             Membership
           </li>
           <li
@@ -155,8 +166,9 @@ const Navbar = () => {
   );
 };
 
-const NavbarItem = ({ label, dropdownItems }) => {
+const NavbarItem = ({ label, dropdownItems, route }) => {
   const [isDropdownOpen, setDropdownOpen] = React.useState(false);
+  const history = useNavigate();
 
   const handleMouseEnter = () => {
     setDropdownOpen(true);
@@ -166,25 +178,33 @@ const NavbarItem = ({ label, dropdownItems }) => {
     setDropdownOpen(false);
   };
 
+  const handleItemClick = (itemRoute) => {
+    history(itemRoute);
+  };
+
   return (
     <li
       className="relative group lgg:text-[22px]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <button className="px-4 py-2 font-semibold">{label}</button>
+      <button
+        onClick={() => handleItemClick(route)}
+        className="font-[500] cursor-pointer lgg:text-[22px] space-x-[1rem] smd:space-x-[2rem] md:space-x-[2.5rem] text-[13px] lg:text-[17px]"
+      >
+        {label}
+      </button>
       {isDropdownOpen && (
         <div className="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg">
           <ul className="space-y-2 p-2">
-            {dropdownItems.map((item) => (
-              <li key={item}>
-                <a
-                  href="#"
+            {dropdownItems.map((item, index) => (
+              <li key={index}>
+                <button
+                  onClick={() => handleItemClick(`/${item.toLowerCase()}`)}
                   className="block px-4 py-2 hover:bg-gray-200"
-                  onClick={() => history("/services")}
                 >
                   {item}
-                </a>
+                </button>
               </li>
             ))}
           </ul>

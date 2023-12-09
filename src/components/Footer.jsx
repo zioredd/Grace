@@ -166,14 +166,14 @@ const Footer = () => {
     <footer className="bg-[#242426] text-white overflow-x-hidden">
       <div className="container mx-auto py-8 w-[80%] sm:w-[90%]">
         <div className="flex space-x-5  flex items-center mb-[4rem] h-[8rem]">
-          <img src={logo} alt="Company Logo" className="h-[7rem] w-[4rem]" />
+          <img src={logo} alt="Company Logo" className="h-[5rem] w-[5rem]" />
           <div>
-            <h1 className="font-[poppins] text-[50px] font-bold">Grace</h1>
-            <h3 className="font-[raleway] text-[18px]">
-              Godly Response to Abuse
-            </h3>
-            <h3 className="font-[raleway] text-[18px]">
-              in the Christian Environment
+            <h1 className="font-[poppins] text-[35px] smd:text-[45px] font-bold leading-tight">
+              Grace
+            </h1>
+            <h3 className="font-[raleway] text-[14px]">
+              Godly Response to Abuse <br className="hidden xs:block" /> in the
+              Christian Environment
             </h3>
           </div>
         </div>
@@ -266,7 +266,7 @@ const Footer = () => {
                   href="https://www.example.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={` hover:text-[#00743A]`}
+                  className={` hover:text-[#0A66C2]`}
                 >
                   <FaLinkedin size={24} />
                 </a>
@@ -276,7 +276,7 @@ const Footer = () => {
                   href="https://www.example.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={` hover:text-[#00743A]`}
+                  className={` hover:text-[#1DA1F2]`}
                 >
                   <FaTwitter size={24} />
                 </a>
@@ -286,7 +286,7 @@ const Footer = () => {
                   href="https://www.example.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={` hover:text-[#00743A]`}
+                  className={` hover:text-[#1877F2]`}
                 >
                   <FaFacebook size={24} />
                 </a>

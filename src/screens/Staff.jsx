@@ -1,5 +1,8 @@
 import ManImage from "../assets/images/Man.jpg";
 import WomanImage from "../assets/images/Woman.jpg";
+import vanillastyle from "../css/styles";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const data = [
   {
@@ -53,23 +56,31 @@ const Section = (prop) => {
 
 const Staff = () => {
   return (
-    <div className="App w-screen  h-full   relative flex flex-col items-center ">
-      <div className="p-10">
-        <h1 className=" sm:text-[3rem] text-[2rem] text-center md:text-[4rem] font-bold font-sans ">
-          EVERYDAY PASTORAL STAFF
-        </h1>
+    <>
+      <div
+        className={`${vanillastyle.anav} border-solid border-grey absolute top-4 sm:top-10 h-[3rem] sm:h-[4rem] text-white z-[200]`}
+      >
+        <Navbar />
       </div>
-      {data.map((item, i) => {
-        return (
-          <Section
-            key={i}
-            title={item.title}
-            details={item.details}
-            img={item.img}
-          />
-        );
-      })}
-    </div>
+      <div className="App w-screen  h-full   relative flex flex-col items-center ">
+        <div className="p-10">
+          <h1 className=" sm:text-[3rem] text-[2rem] text-center md:text-[4rem] font-bold font-sans ">
+            EVERYDAY PASTORAL STAFF
+          </h1>
+        </div>
+        {data.map((item, i) => {
+          return (
+            <Section
+              key={i}
+              title={item.title}
+              details={item.details}
+              img={item.img}
+            />
+          );
+        })}
+        <div className="z-[200] w-full">{/* <Footer /> */}</div>
+      </div>
+    </>
   );
 };
 

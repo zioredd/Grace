@@ -6,6 +6,8 @@ import {
   FaLongArrowAltRight,
 } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const data = [
   {
@@ -74,33 +76,41 @@ const Section = (prop) => {
 
 const Resources = () => {
   return (
-    <div className="App w-screen   bg-[#eee]   relative pb-20 ">
-      <div className=" max-h-[65vh] min-h-[50vh] h-[100vw] w-[100vw]  flex  justify-center items-center overflow-hidden relative bg-black bg-opacity-10">
-        <img
-          src={GroupStudy}
-          alt=""
-          className="object-cover  w-full h-full absolute z-[0] "
-        />
-        <div className="bg-black absolute w-full h-full bg-opacity-30 "></div>
-        <div className="absolute z-[2]  text-[3rem] sm:text-[5rem]  font-bold text-white ">
-          Resources
+    <>
+      <div
+        className={` border-solid border-grey absolute top-4 sm:top-10 h-[3rem] sm:h-[4rem] text-white z-[200]`}
+      >
+        <Navbar />
+      </div>
+      <div className="App w-screen   bg-[#eee]   relative pb-20 ">
+        <div className=" max-h-[65vh] min-h-[50vh] h-[100vw] w-[100vw]  flex  justify-center items-center overflow-hidden relative bg-black bg-opacity-10">
+          <img
+            src={GroupStudy}
+            alt=""
+            className="object-cover  w-full h-full absolute z-[0] "
+          />
+          <div className="bg-black absolute w-full h-full bg-opacity-30 "></div>
+          <div className="absolute z-[2]  text-[3rem] sm:text-[5rem]  font-bold text-white ">
+            Resources
+          </div>
+        </div>
+        <div className=" grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-10 gap-10">
+          {data.map((item, i) => (
+            <Section title={item.title} details={item.details} key={i} />
+          ))}
+        </div>
+        <div className=" flex items-center justify-center gap-5 text-red-600">
+          <div className="flex items-center gap-2 cursor-pointer">
+            <FaAngleLeft />
+            Newer
+          </div>
+          <div className="flex items-center gap-2 cursor-pointer">
+            Older <FaAngleRight />
+          </div>
         </div>
       </div>
-      <div className=" grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-10 gap-10">
-        {data.map((item, i) => (
-          <Section title={item.title} details={item.details} key={i} />
-        ))}
-      </div>
-      <div className=" flex items-center justify-center gap-5 text-red-600">
-        <div className="flex items-center gap-2 cursor-pointer">
-          <FaAngleLeft />
-          Newer
-        </div>
-        <div className="flex items-center gap-2 cursor-pointer">
-          Older <FaAngleRight />
-        </div>
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
