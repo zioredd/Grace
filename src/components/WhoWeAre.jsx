@@ -5,8 +5,8 @@ import { motion } from "framer-motion";
 const WhoWeAre = () => {
   return (
     <>
-      <div className="flex flex-col-reverse md:flex-row p-[1rem] sm:p-[3rem] overflow-x-hidden items-center">
-        <div className="md:w-1/2 p-4  md:order-1">
+      <div className="flex flex-col-reverse md:flex-row p-[1rem] sm:p-[3rem] overflow-x-hidden">
+        <div className="md:w-1/2 px-4 max-h-full  md:order-1">
           <div className="mb-4">
             <p className="font-[poppins] text-[14px] ss:text-[16px] sm:text-[18px] text-[#007474] text-[#d09c4e] font-[700]">
               WHO WE ARE
@@ -30,8 +30,8 @@ const WhoWeAre = () => {
             </p>
           </div>
         </div>
-        <div className="sm:w-1/2  md:order-2 flex justify-end items-end ">
-          <img className="w-full h-auto" src={imagee} alt="Image" />
+        <div className="w-full md:w-1/2 max-h-full  md:order-2 flex justify-end items-end ">
+          <img className="w-full h-full" src={imagee} alt="Image" />
         </div>
       </div>
     </>
