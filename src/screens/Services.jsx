@@ -30,11 +30,11 @@ const Services = () => {
   return (
     <>
       <div
-        className={` border-solid border-grey absolute top-4 sm:top-10 h-[3rem] sm:h-[4rem] text-white z-[200]`}
+        className={`border-solid border-grey absolute top-4 sm:top-10 h-[3rem] sm:h-[4rem] text-white  z-[200]`}
       >
         <Navbar />
       </div>
-      <div className="App w-screen   bg-[#eee]   relative pb-20 ">
+      <div className="App w-screen   bg-[#eee]   relative pb-20 md:text-[1rem]  text-[0.9rem] ">
         <div className=" max-h-[65vh] min-h-[50vh] h-[100vw] w-[100vw]  flex  justify-center items-center overflow-hidden relative bg-black bg-opacity-10">
           <img
             src={Church}
@@ -42,15 +42,15 @@ const Services = () => {
             className="object-cover  w-full h-full absolute z-[0] "
           />
           <div className="bg-black absolute w-full h-full bg-opacity-30 "></div>
-          <div className="absolute z-[2]  text-[3rem] sm:text-[5rem]  font-bold text-white text-center leading-none ">
+          <div className="absolute z-[2]  text-[3rem] sm:text-[5rem]  font-bold text-white text-center leading-none font-Poppins ">
             Safeguarding
             <br /> Intiative
           </div>
         </div>
         <div className=" w-[80vw] text-left m-auto  font-bold ">
           <div className="md:w-[80%] w-[95%] m-auto py-10 border-b-2 border-[#bda635] ">
-            <h5 className="text-[#bda635] uppercase ">Prevention tools</h5>
-            <h2 className="text-[3rem]  md:w-[30vw] leading-none py-5">
+            <h5 className="text-[#bda635] uppercase  ">Prevention tools</h5>
+            <h2 className="text-[3rem]  md:w-[40vw] leading-none py-5 font-Poppins">
               Protect your faith community
             </h2>
             <div className=" flex">
@@ -138,7 +138,6 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

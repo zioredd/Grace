@@ -20,34 +20,29 @@ const Navbar = () => {
           <ul className="flex space-x-[1rem] py-[0.85rem] text-[13px] smd:space-x-[2rem] md:space-x-[2.5rem] lg:text-[17px]">
             <NavbarItem
               label="ABOUT"
-              dropdownItems={["Who we are", "Staff"]}
+              dropdownItems={["Staff", "OurMission"]}
               route="/about"
             />
             <NavbarItem
               label="SERVICES"
-              dropdownItems={[
-                "Prayer",
-                "Counselling",
-                "Counselling",
-                "Counselling",
-              ]}
+              dropdownItems={["Services", "Services", "Services", "Services"]}
               route="/services"
             />
 
             <li
-              onClick={() => history("/ourmission")}
+              onClick={() => history("/give")}
               className="font-[500] cursor-pointer lgg:text-[22px]"
             >
               GIVE
             </li>
             <li
-              onClick={() => history("/staff")}
+              onClick={() => history("/media")}
               className="font-[500] cursor-pointer lgg:text-[22px]"
             >
               MEDIA
             </li>
             <li
-              onClick={() => history("/contact")}
+              onClick={() => history("/membership")}
               className="font-[500] cursor-pointer lgg:text-[22px]"
             >
               MEMBERSHIP
@@ -167,7 +162,7 @@ const Navbar = () => {
 };
 
 const NavbarItem = ({ label, dropdownItems, route }) => {
-  const [isDropdownOpen, setDropdownOpen] = React.useState(false);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
   const history = useNavigate();
 
   const handleMouseEnter = () => {
@@ -195,13 +190,13 @@ const NavbarItem = ({ label, dropdownItems, route }) => {
         {label}
       </button>
       {isDropdownOpen && (
-        <div className="absolute left-0 mt-2 bg-white text-gray-800 shadow-lg rounded-lg">
+        <div className="absolute left-0 bg-white text-gray-800 shadow-lg rounded-lg transition-opacity duration-300 opacity-100">
           <ul className="space-y-2 p-2">
             {dropdownItems.map((item, index) => (
               <li key={index}>
                 <button
                   onClick={() => handleItemClick(`/${item.toLowerCase()}`)}
-                  className="block px-4 py-2 hover:bg-gray-200"
+                  className="block px-4 py-2 hover:bg-gray-200 transition-colors duration-300"
                 >
                   {item}
                 </button>

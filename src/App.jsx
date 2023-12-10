@@ -5,7 +5,7 @@ import HomeScreen from "./screens/HomeScreen";
 import ContactScreen from "./screens/ContactScreen";
 import OurMission from "./screens/OurMission";
 import Staff from "./screens/Staff";
-import Resources from "./screens/Resources";
+import Resources from "./screens/Resources.jsx";
 import Services from "./screens/Services";
 import AboutScreen from "./screens/AboutScreen";
 

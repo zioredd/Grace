@@ -1,4 +1,3 @@
-import React from "react";
 import GroupStudy from "../assets/images/GroupStudy.jpg";
 import {
   FaAngleDoubleRight,
@@ -7,7 +6,7 @@ import {
 } from "react-icons/fa";
 import { FaAngleLeft } from "react-icons/fa";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import vanillastyle from "../css/styles";
 
 const data = [
   {
@@ -65,8 +64,16 @@ const data = [
 const Section = (prop) => {
   return (
     <div className="w-full h-full text-[#030303] text-[0.9rem]  gap-4 text-start  flex justify-start items-start flex-col  ">
-      <h1 className=" text-red-600 text-[1rem]  font-bold  ">{prop.title}</h1>
-      <h4 className=" ">{prop.details}</h4>
+      <h1 className=" text-red-600 text-[1rem] md:text-[1.2rem]  font-bold  font-Poppins ">
+        {prop.title}
+      </h1>
+      {/* limit the caracter length  */}
+
+      <h4 className="text-[0.9rem] md:text-[1rem] ">
+        {prop.details.length > 329
+          ? prop.details.slice(0, 329) + "..."
+          : prop.details.slice(0, 329)}
+      </h4>
       <div className=" text-blue-600 flex gap-2 cursor-pointer items-center ">
         Read More <FaLongArrowAltRight />
       </div>
@@ -78,7 +85,7 @@ const Resources = () => {
   return (
     <>
       <div
-        className={` border-solid border-grey absolute top-4 sm:top-10 h-[3rem] sm:h-[4rem] text-white z-[200]`}
+        className={`${vanillastyle.anav} border-solid border-grey absolute top-4 sm:top-10 h-[3rem] sm:h-[4rem] text-white z-[200]`}
       >
         <Navbar />
       </div>
@@ -90,7 +97,7 @@ const Resources = () => {
             className="object-cover  w-full h-full absolute z-[0] "
           />
           <div className="bg-black absolute w-full h-full bg-opacity-30 "></div>
-          <div className="absolute z-[2]  text-[3rem] sm:text-[5rem]  font-bold text-white ">
+          <div className="absolute z-[2]  text-[3rem] sm:text-[5rem]  font-bold text-white font-Poppins ">
             Resources
           </div>
         </div>
@@ -99,7 +106,7 @@ const Resources = () => {
             <Section title={item.title} details={item.details} key={i} />
           ))}
         </div>
-        <div className=" flex items-center justify-center gap-5 text-red-600">
+        <div className=" flex items-center justify-center gap-5 text-red-600 md:text-[1rem]  text-[0.9rem]">
           <div className="flex items-center gap-2 cursor-pointer">
             <FaAngleLeft />
             Newer
@@ -109,7 +116,6 @@ const Resources = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
