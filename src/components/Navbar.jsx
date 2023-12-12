@@ -18,15 +18,10 @@ const Navbar = () => {
         </div>
         <div className="hidden sm:flex">
           <ul className="flex space-x-[1rem] py-[0.85rem] text-[13px] smd:space-x-[2rem] md:space-x-[2.5rem] lg:text-[17px]">
-            <NavbarItem
-              label="ABOUT"
-              dropdownItems={["Staff", "OurMission"]}
-              route="/about"
-            />
+            <NavbarItem label="ABOUT" dropdownItems={["Staff", "OurMission"]} />
             <NavbarItem
               label="SERVICES"
               dropdownItems={["Services", "Services", "Services", "Services"]}
-              route="/services"
             />
 
             <li
@@ -161,7 +156,7 @@ const Navbar = () => {
   );
 };
 
-const NavbarItem = ({ label, dropdownItems, route }) => {
+const NavbarItem = ({ label, dropdownItems }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const history = useNavigate();
 
@@ -184,7 +179,7 @@ const NavbarItem = ({ label, dropdownItems, route }) => {
       onMouseLeave={handleMouseLeave}
     >
       <button
-        onClick={() => handleItemClick(route)}
+        // onClick={() => handleItemClick(route)}
         className="font-[500] cursor-pointer lgg:text-[22px] space-x-[1rem] smd:space-x-[2rem] md:space-x-[2.5rem] text-[13px] lg:text-[17px]"
       >
         {label}

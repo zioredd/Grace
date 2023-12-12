@@ -115,8 +115,8 @@ const Staff = () => {
       >
         <Navbar />
       </div>
-      <div className="App w-screen   relative flex flex-col items-center ">
-        <div className="p-10">
+      <div className="App w-screen relative flex flex-col items-center">
+        <div className="p-10 mt-[5rem]">
           <h1 className="md:text-[4rem] sm:text-[3rem] text-[2rem] text-center  font-bold font-Poppins ">
             EVERYDAY PASTORAL STAFF
           </h1>
