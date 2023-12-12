@@ -18,12 +18,17 @@ const Navbar = () => {
         </div>
         <div className="hidden sm:flex">
           <ul className="flex space-x-[1rem] py-[0.85rem] text-[13px] smd:space-x-[2rem] md:space-x-[2.5rem] lg:text-[17px]">
+            <li
+              onClick={() => history("/")}
+              className="font-[500] cursor-pointer lgg:text-[22px]"
+            >
+              HOME
+            </li>
             <NavbarItem label="ABOUT" dropdownItems={["Staff", "OurMission"]} />
             <NavbarItem
               label="SERVICES"
               dropdownItems={["Services", "Services", "Services", "Services"]}
             />
-
             <li
               onClick={() => history("/give")}
               className="font-[500] cursor-pointer lgg:text-[22px]"
@@ -108,6 +113,12 @@ const Navbar = () => {
         } p-6 bg-black-gradient absolute top-10 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar bg-[#242426]`}
       >
         <ul className="list-none flex justify-end items-start flex-1 flex-col space-y-5">
+          <li
+            onClick={() => history("/")}
+            className={`font-poppins font-medium cursor-pointer text-[16px]`}
+          >
+            Home
+          </li>
           <li
             onClick={() => history("/about")}
             className={`font-poppins font-medium cursor-pointer text-[16px]`}
